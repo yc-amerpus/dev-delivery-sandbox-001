@@ -1,4 +1,4 @@
-# Dec-Delivery Sandbox
+# Dev-Delivery Sandbox
 
 Trivial doc-edit target for the dev-delivery v1 acceptance run (see SPEC.md §7).
 
