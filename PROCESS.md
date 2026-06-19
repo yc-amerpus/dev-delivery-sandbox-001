@@ -3,8 +3,8 @@
 ## 1. Branching
 
 - **Base branch:** `main` on the upstream repo, unless `SPEC.md` explicitly names another (e.g. `develop`).
-- **Delivery branch:** `delivery/{{delivery_id}}` — already created by the container entrypoint. All commits land here.
-- **Sub-task branches (optional):** `delivery/{{delivery_id}}-<task-id>` for parallelisable or independently reviewable sub-tasks (hyphen separator, not slash — git refs cannot nest under the parent delivery branch). Merge back into the delivery branch via PR before the delivery PR closes.
+- **Delivery branch:** `delivery/$DELIVERY_ID` — already created by the container entrypoint. All commits land here.
+- **Sub-task branches (optional):** `delivery/$DELIVERY_ID-<task-id>` for parallelisable or independently reviewable sub-tasks (hyphen separator, not slash — git refs cannot nest under the parent delivery branch). Merge back into the delivery branch via PR before the delivery PR closes.
 - **Never:** commit to `main`, `master`, `develop`, or any branch outside `delivery/...`.
 
 ## 2. Commits
@@ -16,12 +16,12 @@ Conventional Commits, no exceptions:
 
 <body — optional, hard-wrapped at 72>
 
-Refs: {{delivery_id}}
+Refs: $DELIVERY_ID
 ```
 
 Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`.
 
-Subject in imperative mood, no trailing period, ≤ 72 chars. The body explains *why* — the diff already shows *what*. Always include the `Refs: {{delivery_id}}` trailer so commits can be traced back to the orchestrator's records.
+Subject in imperative mood, no trailing period, ≤ 72 chars. The body explains *why* — the diff already shows *what*. Always include the `Refs: $DELIVERY_ID` trailer so commits can be traced back to the orchestrator's records.
 
 One logical change per commit. If you find yourself writing "and also" in a subject, split it.
 
@@ -50,7 +50,7 @@ One logical change per commit. If you find yourself writing "and also" in a subj
   ## Notes for review
   <anything reviewer attention should land on>
 
-  Refs: {{delivery_id}}
+  Refs: $DELIVERY_ID
   ```
 
 - **Draft → Ready:** flip out of draft only when CI is green and `Definition of Done` (§5) is complete.
@@ -162,7 +162,7 @@ When the delivery is complete:
 1. PR is in `Ready for review`, CI is green, all DoD items ticked
 2. `TASKS.md` is fully checked off
 3. `artefacts/` contains test evidence and any decision records
-4. Send `complete` status report to the orchestrator at `{{orchestrator_url}}/status/complete` with the PR URL
+4. Send `complete` status report to the orchestrator at `$ORCHESTRATOR_URL/status/complete` with the PR URL
 5. Stop. The orchestrator handles merge, close, and container teardown.
 
 If the merge introduces a regression or post-merge issue, the orchestrator will spin up a new delivery container with a follow-up SPEC. Do not try to "stick around" past the merge.
