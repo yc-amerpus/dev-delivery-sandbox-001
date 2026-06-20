@@ -142,7 +142,28 @@ When `TASKS.md` is fully checked off and the PR is green:
 
 1. Open or update the PR description with a final summary
 2. Run the `Definition of Done` checklist from `PROCESS.md`
-3. Send a `complete` status report to the orchestrator at `$ORCHESTRATOR_URL/status/complete`
+3. Send a `complete` status report to the orchestrator at `$ORCHESTRATOR_URL/status/complete`:
+
+```bash
+curl -sS -X POST "$ORCHESTRATOR_URL/status/complete" \
+  -H "Authorization: Bearer $ORCHESTRATOR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d "$(jq -n \
+        --arg id "$DELIVERY_ID" \
+        --arg pr "<full https://github.com/<org>/<repo>/pull/<n> URL>" \
+        --arg summary "<one-line summary of what you delivered>" \
+        '{delivery_id:$id, pr_url:$pr, task_summary:$summary}')"
+```
+
+`delivery_id` and `pr_url` are **required**; `pr_url` must be the full GitHub PR URL. Build the body with `jq` (as above) so it is always valid JSON — do not hand-format it.
+
+This endpoint **long-polls**, the same way `/hitl` does (§6) — the orchestrator owns the timeout, you do not. Handle the response exactly like HITL:
+
+- `{"status": "not_ready", "reason": "..."}` — the PR isn't mergeable *yet* (e.g. GitHub is still computing mergeability right after you opened the PR). This is **not** a failure and **not** a reason to stop. Wait a few seconds and **re-POST the identical request**. Keep retrying until you get one of the responses below.
+- The connection **stays open** (no response yet) — that is the expected parked state while Pete reviews the merge. **Wait.** Do not add a client-side timeout (no `--max-time`); do not kill and re-issue unless the connection actually drops.
+- `{"decision": "keepalive", ...}` — transport keepalive; re-POST the identical request immediately (same as §6).
+- A terminal result (`{"decision": "merge"|"request-changes"|"cancel", ...}` or a merge outcome like `{"status": "merged"}` / `{"status": "merge_failed", ...}`) — the orchestrator has acted on Pete's decision. You are done; see step 4.
+
 4. Stop. Do not start new work, do not refactor opportunistically. The orchestrator will tear down the container or assign the next delivery.
 
 ## 11. Style preferences (project-defaults — repo CLAUDE.md may override)

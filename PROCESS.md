@@ -162,7 +162,7 @@ When the delivery is complete:
 1. PR is in `Ready for review`, CI is green, all DoD items ticked
 2. `TASKS.md` is fully checked off
 3. `artefacts/` contains test evidence and any decision records
-4. Send `complete` status report to the orchestrator at `$ORCHESTRATOR_URL/status/complete` with the PR URL
+4. Send `complete` status report to the orchestrator at `$ORCHESTRATOR_URL/status/complete` with the PR URL — use the exact `curl` recipe and response-handling contract in `CLAUDE.md` §10 (required body `{delivery_id, pr_url, task_summary}`; on `not_ready` wait and re-POST; the call long-polls while Pete approves — wait, don't time out).
 5. Stop. The orchestrator handles merge, close, and container teardown.
 
 If the merge introduces a regression or post-merge issue, the orchestrator will spin up a new delivery container with a follow-up SPEC. Do not try to "stick around" past the merge.
