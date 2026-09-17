@@ -6,10 +6,10 @@
 
 ## Phase A — Sandbox smoke (phase-scoped dispatch)
 - **Phase ID:** A
-- **Status:** ready
+- **Status:** done
 - **Depends on:** none
 
-- [ ] Append a single line reading `Phase-scoped dispatch verified.` to the end of `README.md`. Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer.
+- [x] Append a single line reading `Phase-scoped dispatch verified.` to the end of `README.md`. Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer.
 
 ## Phase B — Follow-on (dependency + draft gate test)
 - **Phase ID:** B
