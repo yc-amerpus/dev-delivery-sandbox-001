@@ -17,3 +17,10 @@
 - **Depends on:** A
 
 - [ ] Placeholder task — not greenlit. Exists only to exercise the plan-gate dependency/draft warnings; do not dispatch.
+
+## Phase C — Monitor observability run (F-02)
+- **Phase ID:** C
+- **Status:** ready
+- **Depends on:** A
+
+- [ ] Create `docs/monitor-check.md` containing a level-1 heading `# Monitor check` followed by a blank line and a single line reading `F-02 monitor verification — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer.
