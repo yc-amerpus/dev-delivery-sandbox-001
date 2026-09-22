@@ -20,7 +20,7 @@
 
 ## Phase C — Monitor observability run (F-02)
 - **Phase ID:** C
-- **Status:** ready
+- **Status:** done
 - **Depends on:** A
 
-- [ ] Create `docs/monitor-check.md` containing a level-1 heading `# Monitor check` followed by a blank line and a single line reading `F-02 monitor verification — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer.
+- [x] Create `docs/monitor-check.md` containing a level-1 heading `# Monitor check` followed by a blank line and a single line reading `F-02 monitor verification — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer.
