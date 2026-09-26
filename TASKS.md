@@ -24,3 +24,10 @@
 - **Depends on:** A
 
 - [x] Create `docs/monitor-check.md` containing a level-1 heading `# Monitor check` followed by a blank line and a single line reading `F-02 monitor verification — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer.
+
+## Phase D — Monitor snapshot verification (F-02 criterion 1)
+- **Phase ID:** D
+- **Status:** ready
+- **Depends on:** C
+
+- [ ] Create `docs/monitor-check-2.md` containing a level-1 heading `# Monitor check 2` followed by a blank line and a single line reading `monitor_snapshot cadence verified — delivery {{delivery_id}}.` Then wait 180 seconds before reporting completion, so the D-04 monitor has time to emit several 60-second snapshots. Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer.
