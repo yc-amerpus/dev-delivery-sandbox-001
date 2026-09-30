@@ -31,3 +31,10 @@
 - **Depends on:** C
 
 - [x] Create `docs/monitor-check-2.md` containing a level-1 heading `# Monitor check 2` followed by a blank line and a single line reading `monitor_snapshot cadence verified — delivery {{delivery_id}}.` Then wait 180 seconds before reporting completion, so the D-04 monitor has time to emit several 60-second snapshots. Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer.
+
+## Phase E — Audit chain verification (F-02 criteria 1 and 2)
+- **Phase ID:** E
+- **Status:** ready
+- **Depends on:** D
+
+- [ ] Create `docs/monitor-check-3.md` containing a level-1 heading `# Monitor check 3` followed by a blank line and a single line reading `monitor_snapshot, commit_observed and pr_opened verified — delivery {{delivery_id}}.` Then wait 150 seconds before reporting completion, so the D-04 monitor emits several 60-second snapshots after the commit. Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer.
