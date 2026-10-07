@@ -62,7 +62,7 @@
 
 ## Phase I — Concurrent delivery re-run, lane 4 (H-03 / H-01)
 - **Phase ID:** I
-- **Status:** ready
+- **Status:** done
 - **Depends on:** none
 
-- [ ] Create `docs/concurrent-i.md` containing a level-1 heading `# Concurrent lane I` followed by a blank line and a single line reading `H-03 re-run, two pending HITL gates, lane I — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Then wait 120 seconds before reporting completion. Touch no other file except this phase's own block in `TASKS.md`.
+- [x] Create `docs/concurrent-i.md` containing a level-1 heading `# Concurrent lane I` followed by a blank line and a single line reading `H-03 re-run, two pending HITL gates, lane I — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Then wait 120 seconds before reporting completion. Touch no other file except this phase's own block in `TASKS.md`.
