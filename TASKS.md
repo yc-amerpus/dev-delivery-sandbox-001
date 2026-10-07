@@ -38,3 +38,17 @@
 - **Depends on:** D
 
 - [x] Create `docs/monitor-check-3.md` containing a level-1 heading `# Monitor check 3` followed by a blank line and a single line reading `monitor_snapshot, commit_observed and pr_opened verified — delivery {{delivery_id}}.` Then wait 150 seconds before reporting completion, so the D-04 monitor emits several 60-second snapshots after the commit. Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer.
+
+## Phase F — Concurrent delivery, lane 1 (H-03)
+- **Phase ID:** F
+- **Status:** ready
+- **Depends on:** none
+
+- [ ] Create `docs/concurrent-f.md` containing a level-1 heading `# Concurrent lane F` followed by a blank line and a single line reading `H-03 concurrent delivery, lane F — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Then wait 240 seconds before reporting completion, so this delivery overlaps with the concurrent lane-G delivery. Touch no other file except this phase's own block in `TASKS.md`.
+
+## Phase G — Concurrent delivery, lane 2 (H-03)
+- **Phase ID:** G
+- **Status:** ready
+- **Depends on:** none
+
+- [ ] Create `docs/concurrent-g.md` containing a level-1 heading `# Concurrent lane G` followed by a blank line and a single line reading `H-03 concurrent delivery, lane G — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Then wait 240 seconds before reporting completion, so this delivery overlaps with the concurrent lane-F delivery. Touch no other file except this phase's own block in `TASKS.md`.
