@@ -52,3 +52,17 @@
 - **Depends on:** none
 
 - [x] Create `docs/concurrent-g.md` containing a level-1 heading `# Concurrent lane G` followed by a blank line and a single line reading `H-03 concurrent delivery, lane G — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Then wait 240 seconds before reporting completion, so this delivery overlaps with the concurrent lane-F delivery. Touch no other file except this phase's own block in `TASKS.md`.
+
+## Phase H — Concurrent delivery re-run, lane 3 (H-03 / H-01)
+- **Phase ID:** H
+- **Status:** ready
+- **Depends on:** none
+
+- [ ] Create `docs/concurrent-h.md` containing a level-1 heading `# Concurrent lane H` followed by a blank line and a single line reading `H-03 re-run, two pending HITL gates, lane H — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Then wait 120 seconds before reporting completion. Touch no other file except this phase's own block in `TASKS.md`.
+
+## Phase I — Concurrent delivery re-run, lane 4 (H-03 / H-01)
+- **Phase ID:** I
+- **Status:** ready
+- **Depends on:** none
+
+- [ ] Create `docs/concurrent-i.md` containing a level-1 heading `# Concurrent lane I` followed by a blank line and a single line reading `H-03 re-run, two pending HITL gates, lane I — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Then wait 120 seconds before reporting completion. Touch no other file except this phase's own block in `TASKS.md`.
