@@ -69,7 +69,7 @@
 
 ## Phase J — D-05 merge-path verification (#81 NCT progress + out-of-band reconcile)
 - **Phase ID:** J
-- **Status:** ready
+- **Status:** done
 - **Depends on:** none
 
-- [ ] Create `docs/merge-path-check.md` containing a level-1 heading `# Merge path check` followed by a blank line and a single line reading `D-05 NCT merge-progress and out-of-band reconcile verified — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Touch no other file except this phase's own block in `TASKS.md`.
+- [x] Create `docs/merge-path-check.md` containing a level-1 heading `# Merge path check` followed by a blank line and a single line reading `D-05 NCT merge-progress and out-of-band reconcile verified — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Touch no other file except this phase's own block in `TASKS.md`.
