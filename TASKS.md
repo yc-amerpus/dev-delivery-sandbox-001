@@ -66,3 +66,10 @@
 - **Depends on:** none
 
 - [x] Create `docs/concurrent-i.md` containing a level-1 heading `# Concurrent lane I` followed by a blank line and a single line reading `H-03 re-run, two pending HITL gates, lane I — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Then wait 120 seconds before reporting completion. Touch no other file except this phase's own block in `TASKS.md`.
+
+## Phase J — D-05 merge-path verification (#81 NCT progress + out-of-band reconcile)
+- **Phase ID:** J
+- **Status:** ready
+- **Depends on:** none
+
+- [ ] Create `docs/merge-path-check.md` containing a level-1 heading `# Merge path check` followed by a blank line and a single line reading `D-05 NCT merge-progress and out-of-band reconcile verified — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Touch no other file except this phase's own block in `TASKS.md`.
