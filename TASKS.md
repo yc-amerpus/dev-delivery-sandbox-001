@@ -83,7 +83,7 @@
 
 ## Phase L — Archive completeness (#140)
 - **Phase ID:** L
-- **Status:** ready
+- **Status:** done
 - **Depends on:** none
 
-- [ ] Create `docs/archive-check.md` containing a level-1 heading `# Archive check` followed by a blank line and a single line reading `teardown_complete now lands in the per-delivery archive — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not wait or sleep at any point. Touch no other file except this phase's own block in `TASKS.md`.
+- [x] Create `docs/archive-check.md` containing a level-1 heading `# Archive check` followed by a blank line and a single line reading `teardown_complete now lands in the per-delivery archive — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not wait or sleep at any point. Touch no other file except this phase's own block in `TASKS.md`.
