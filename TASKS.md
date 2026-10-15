@@ -80,3 +80,10 @@
 - **Depends on:** none
 
 - [x] Create `docs/nine-event-check.md` containing a level-1 heading `# Nine event check` followed by a blank line and a single line reading `pr_opened emitted authoritatively on a fast delivery — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not wait or sleep at any point — finish as fast as you can, because the point of this phase is a short-lived PR. Touch no other file except this phase's own block in `TASKS.md`.
+
+## Phase L — Archive completeness (#140)
+- **Phase ID:** L
+- **Status:** ready
+- **Depends on:** none
+
+- [ ] Create `docs/archive-check.md` containing a level-1 heading `# Archive check` followed by a blank line and a single line reading `teardown_complete now lands in the per-delivery archive — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not wait or sleep at any point. Touch no other file except this phase's own block in `TASKS.md`.
