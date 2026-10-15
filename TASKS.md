@@ -73,3 +73,10 @@
 - **Depends on:** none
 
 - [x] Create `docs/merge-path-check.md` containing a level-1 heading `# Merge path check` followed by a blank line and a single line reading `D-05 NCT merge-progress and out-of-band reconcile verified — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Touch no other file except this phase's own block in `TASKS.md`.
+
+## Phase K — Full nine-event chain on a FAST delivery (#138)
+- **Phase ID:** K
+- **Status:** ready
+- **Depends on:** none
+
+- [ ] Create `docs/nine-event-check.md` containing a level-1 heading `# Nine event check` followed by a blank line and a single line reading `pr_opened emitted authoritatively on a fast delivery — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not wait or sleep at any point — finish as fast as you can, because the point of this phase is a short-lived PR. Touch no other file except this phase's own block in `TASKS.md`.
