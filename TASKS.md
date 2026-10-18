@@ -87,3 +87,10 @@
 - **Depends on:** none
 
 - [x] Create `docs/archive-check.md` containing a level-1 heading `# Archive check` followed by a blank line and a single line reading `teardown_complete now lands in the per-delivery archive — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not wait or sleep at any point. Touch no other file except this phase's own block in `TASKS.md`.
+
+## Phase M — agent_silent live check (#144)
+- **Phase ID:** M
+- **Status:** ready
+- **Depends on:** none
+
+- [ ] BEFORE doing anything else, ask the operator a question using the orchestrator `/hitl` endpoint exactly as described in DELIVERY_PROTOCOL.md ("If you need a human decision"). Use task id `M-01`, question `Which wording should docs/silent-check.md use?`, options `alpha` and `beta`. The call long-polls: when it returns `{"decision":"keepalive",...}` you MUST immediately re-POST the same request with the returned `continuation` token, and keep doing so until you get a real decision. Do not create files, commit, or push before you have a real decision. Then create `docs/silent-check.md` with a level-1 heading `# Silent check` and one line `wording: <decision> — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Touch no other file except this phase's own block in `TASKS.md`.
