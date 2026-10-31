@@ -94,3 +94,31 @@
 - **Depends on:** none
 
 - [ ] BEFORE doing anything else, ask the operator a question using the orchestrator `/hitl` endpoint exactly as described in DELIVERY_PROTOCOL.md ("If you need a human decision"). Use task id `M-01`, question `Which wording should docs/silent-check.md use?`, options `alpha` and `beta`. The call long-polls: when it returns `{"decision":"keepalive",...}` you MUST immediately re-POST the same request with the returned `continuation` token, and keep doing so until you get a real decision. If a call fails without a response (curl exit 7, 52 or 56, or HTTP 502/503/504) the orchestrator is restarting: sleep 15 seconds and re-POST the identical request with the last `continuation` you received, and keep retrying; never give up and never ask a new question. Do not create files, commit, or push before you have a real decision. Then create `docs/silent-check.md` with a level-1 heading `# Silent check` and one line `wording: <decision> — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Touch no other file except this phase's own block in `TASKS.md`.
+
+## Phase N — Issue linkage live check: declared issue (#193)
+- **Phase ID:** N
+- **Status:** ready
+- **Depends on:** none
+- **Executor:** dd
+- **Requires:** none
+- **Issues:** #25
+
+- [ ] Create `docs/w-linkage/declared.md` containing a level-1 heading `# Declared issue` followed by a blank line and a single line reading `Phase N delivered by {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not ask any question, wait or sleep at any point. Touch no other file except this phase's own block in `TASKS.md`.
+
+## Phase O — Plan-gate issue creation smoke (#193)
+- **Phase ID:** O
+- **Status:** ready
+- **Depends on:** none
+- **Executor:** dd
+- **Requires:** none
+
+- [ ] Create `docs/w-linkage/created.md` containing a level-1 heading `# Created issue` followed by a blank line and a single line reading `Phase O delivered by {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not ask any question, wait or sleep at any point. Touch no other file except this phase's own block in `TASKS.md`.
+
+## Phase P — Claim release on cancel (#193)
+- **Phase ID:** P
+- **Status:** ready
+- **Depends on:** none
+- **Executor:** dd
+- **Requires:** none
+
+- [ ] Create `docs/w-linkage/released.md` containing a level-1 heading `# Released claim` followed by a blank line and a single line reading `Phase P delivered by {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not ask any question, wait or sleep at any point. Touch no other file except this phase's own block in `TASKS.md`. (The operator will cancel this delivery at the merge gate; that is expected.)
