@@ -88,6 +88,17 @@
 
 - [x] Create `docs/archive-check.md` containing a level-1 heading `# Archive check` followed by a blank line and a single line reading `teardown_complete now lands in the per-delivery archive — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not wait or sleep at any point. Touch no other file except this phase's own block in `TASKS.md`.
 
+## Phase Q — Resume live check (#202)
+- **Phase ID:** Q
+- **Status:** ready
+- **Depends on:** none
+- **Executor:** dd
+- **Requires:** none
+
+- [ ] Q-01: BEFORE doing anything else, ask the operator a question using the orchestrator `/hitl` endpoint exactly as described in DELIVERY_PROTOCOL.md ("If you need a human decision"). Use task id `Q-01`, question `Q-01: which colour should docs/resume-smoke.md record?`, options `red` and `blue`. The call long-polls: when it returns `{"decision":"keepalive",...}` you MUST immediately re-POST the same request with the returned `continuation` token, and keep doing so until you get a real decision. If a call fails without a response (curl exit 7, 52 or 56, or HTTP 502/503/504) the orchestrator is restarting: sleep 15 seconds and re-POST the identical request with the last `continuation` you received, and keep retrying; never give up and never ask a new question. Do not create files, commit, or push before you have a real decision.
+- [ ] Q-02: Then ask a second question the same way: task id `Q-02`, question `Q-02: which shape should docs/resume-smoke.md record?`, options `circle` and `square`, with the same keepalive and retry rules. The operator will stop your process while you wait for this answer and then resume you: if your prompt says you were resumed and names a `continuation` for a request, re-POST that request with that continuation exactly as the prompt says, and use the decision it returns. Never ask Q-01 or Q-02 a second time as a new question.
+- [ ] Q-03: Then create `docs/resume-smoke.md` with a level-1 heading `# Resume smoke` followed by a blank line and two lines: `colour: <Q-01 decision>` and `shape: <Q-02 decision> — delivery {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Touch no other file except this phase's own block in `TASKS.md`. (The operator will cancel this delivery at the merge gate; that is expected.)
+
 ## Phase M — agent_silent live check (#144)
 - **Phase ID:** M
 - **Status:** ready
