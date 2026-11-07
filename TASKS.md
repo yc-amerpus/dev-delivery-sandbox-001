@@ -107,12 +107,13 @@
 
 ## Phase O — Plan-gate issue creation smoke (#193)
 - **Phase ID:** O
-- **Status:** ready
+- **Status:** done
 - **Depends on:** none
 - **Executor:** dd
 - **Requires:** none
+- **Issues:** #29
 
-- [ ] Create `docs/w-linkage/created.md` containing a level-1 heading `# Created issue` followed by a blank line and a single line reading `Phase O delivered by {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not ask any question, wait or sleep at any point. Touch no other file except this phase's own block in `TASKS.md`.
+- [x] Create `docs/w-linkage/created.md` containing a level-1 heading `# Created issue` followed by a blank line and a single line reading `Phase O delivered by {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not ask any question, wait or sleep at any point. Touch no other file except this phase's own block in `TASKS.md`.
 
 ## Phase P — Claim release on cancel (#193)
 - **Phase ID:** P
