@@ -97,13 +97,13 @@
 
 ## Phase N — Issue linkage live check: declared issue (#193)
 - **Phase ID:** N
-- **Status:** ready
+- **Status:** done
 - **Depends on:** none
 - **Executor:** dd
 - **Requires:** none
 - **Issues:** #25
 
-- [ ] Create `docs/w-linkage/declared.md` containing a level-1 heading `# Declared issue` followed by a blank line and a single line reading `Phase N delivered by {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not ask any question, wait or sleep at any point. Touch no other file except this phase's own block in `TASKS.md`.
+- [x] Create `docs/w-linkage/declared.md` containing a level-1 heading `# Declared issue` followed by a blank line and a single line reading `Phase N delivered by {{delivery_id}}.` Commit with a Conventional Commit message and a `Refs: {{delivery_id}}` trailer, push, and open the PR. Do not ask any question, wait or sleep at any point. Touch no other file except this phase's own block in `TASKS.md`.
 
 ## Phase O — Plan-gate issue creation smoke (#193)
 - **Phase ID:** O
